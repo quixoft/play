@@ -1,0 +1,13 @@
+pi-server.py recieves events and logs them to a file
+
+In /home/play run 
+
+./pi-server.py -d 
+
+To see the options 
+
+./py-server --help
+
+Julian
+
+
