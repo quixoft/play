@@ -1,0 +1,2 @@
+ #!/bin/sh
+ifconfig | awk '/inet addr:192.168/ {print substr($2,6)}'
