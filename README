@@ -7,7 +7,18 @@ In /home/play run
 To see the options 
 
 ./py-server --help
+---------------------------
+
+new_geo_cosmic_pi.py is the client that talks to the Arduino 
+and sends events over UDP to the server
+
+----------------------------
+
+geo_cosmic_pi.cc is the arduino code.
+N.B. This requires some modifications in the addafruit libraries
+before it can be compiled
+
+----------------------------
+
 
 Julian
-
-

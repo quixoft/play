@@ -301,6 +301,7 @@ def main():
 				if logflg:
 					line = "%s - %s" % (str(recv[0]),str(recv[1]))
 					log.write(line)
+					log.write("\n\n")
 
                         if kbrd.test_input():
                                 kbrd.echo_on()
