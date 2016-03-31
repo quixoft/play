@@ -1,8 +1,12 @@
+This is all in git here !!
+
+--------------------------
+
 pi-server.py recieves events and logs them to a file
 
 In /home/play run 
 
-./pi-server.py -d 
+./pi-server.py -d -o .
 
 To see the options 
 
@@ -12,6 +16,8 @@ To see the options
 new_geo_cosmic_pi.py is the client that talks to the Arduino 
 and sends events over UDP to the server
 
+./new_geo_cosmic_pi.py --help
+
 ----------------------------
 
 geo_cosmic_pi.cc is the arduino code.
@@ -20,5 +26,12 @@ before it can be compiled
 
 ----------------------------
 
+ToDo:
+As per our last meeting
+
+1) Add encryption
+2) Handle no internet periods
+3) Memory buffer to avoid wearing out SD cards
+4) Confirmation of sent packets on request
 
 Julian
