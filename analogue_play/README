@@ -1,0 +1,30 @@
+This is just me testing various configurations
+In the actual firmware, I do ...
+
+// Set up the ADC channels
+
+void AdcSetup() {
+        REG_ADC_MR = 0x10380080;        // Free run as fast as you can
+        REG_ADC_CHER = 3;               // Channels 0 and 1
+}
+
+// Pull all data (16 values) from the ADC into a buffer
+
+uint8_t AdcPullData(struct Event *b) {
+
+        int i;
+
+        for (i=0; i<ADC_BUF_LEN; i++) {                 // For all in ADC pipeline
+                while((ADC->ADC_ISR & 0x01)==0);        // Wait for channel 0 (2.5us)
+                b->Ch0[i] = (uint16_t) ADC->ADC_CDR[0]; // Read ch 0
+                while((ADC->ADC_ISR & 0x02)==0);        // Wait for channel 1 (2.5us)
+                b->Ch1[i] = (uint16_t) ADC->ADC_CDR[1]; // Read ch 1
+        }
+}
+
+This is simple and avoids the bug. 
+There is no pipe line that I can find using any configuration. 
+The one in the sketch here is far too complicated, its just a final
+test that forces a 16 value sampling sequence to be absolutley sure
+there ain't no pipline.
+

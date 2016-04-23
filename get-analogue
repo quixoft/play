@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -avzl julian@ttleaz.ddns.net:/home/julian/Arduino/analogue_play .
